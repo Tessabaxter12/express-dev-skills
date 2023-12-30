@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <style>
+        body {background-color: rgb(102, 90, 90)} 
+        h1   {color: white}
+        a    {color: red}
+    </style>
+    <a href='/skills'>Index</a>
+    <h3>Edit Skill</h3>
+    <form action="/skills/<%= skill.id %>?_method=PUT" method="POST">
+        <input type="text" name="skill" value="<%= skill.skill %>"><br>
+        <label>
+        <input type="checkbox" name="done" <%= skill.done ? 'checked' : '' %>>
+        complete
+        </label><br>
+        <button type="submit">Save Skill</button>
+    </form>
+</body>
+</html>

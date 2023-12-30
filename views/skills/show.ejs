@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+<body>
+    <style>
+        body    {background-color: red} 
+        h1      {color: rgb(102, 90, 90)}
+        a       {color: white}
+    </style>
+    <a href='/skills'>Index</a>
+    <h1><%= skill.skill %></h1>
+<h3><% skill.skill %></h3>
+<h3>Complete: <%= skill.done ? 'Yes' : 'No' %></h3>
+<a href="/skills/<%= skill.id %>/edit">Edit Skill</a>
+<form 
+    action="/skills/<%= skill.id %>?_method=DELETE"
+    method="POST"
+    class="delete-form">
+    <button type="submit">X</button>
+</form>
+</body>
+</html>
